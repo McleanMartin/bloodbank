@@ -47,6 +47,41 @@
             source:"assets/bag.jpg"
             text:"Blood Details"
         Card:
+            source:"assets/map.png"
+            text:"Map"
+        Card:
+            source:"assets/assist.png"
+            text:"Assistance"
+
+<Screenthree>
+    MDFloatLayout:
+        md_bg_color: get_color_from_hex("#ff1919e8")
+        size_hint_y: .45
+        pos_hint: {'top': 1}
+
+    MDLabel:
+        text: "Hello ,Welcome"
+        bold:True
+        font_style:"H4"
+        pos_hint: {'center_y': 0.85}
+        x:"24dp" 
+
+    MDGridLayout:
+        rows:2
+        cols:2
+        spacing: '10dp'
+        padding: ('36dp',)
+        size_hint_y: None
+        height: root.height / 1.4
+
+
+        Card:
+            source:"assets/bag.jpg"
+            text:"Blood Donor Card"
+        Card:
+            source:"assets/bag.jpg"
+            text:"Blood Details"
+        Card:
             source:"assets/bag.jpg"
             text:"Locate Hospital"
         Card:
@@ -60,7 +95,7 @@
         pos_hint: {'top': 1}
 
     MDLabel:
-        text: "My Blood"
+        text: "Donation Alert"
         bold:True
         font_style:"H6"
         pos_hint: {'center_y': 0.85}
@@ -76,18 +111,7 @@
 
 
         Card:
-            source:"assets/donate.jpg"
-            text:""
-        Card:
-            source:"assets/donate.jpg"
-            text:""
-        Card:
-            source:"assets/donate.jpg"
-            text:""
-        Card:
-            source:"assets/donate.jpg"
-            text:""
-            
+            text:"Mutare General Hospital \n Mon-07-23 \n 13:00-16:00"
 MDScreen:
     name:"home"
 
@@ -123,13 +147,14 @@ MDScreen:
             icon: "alert"
     
             # Add Contents here
+            Screenfour:
 
         
         # Add a NavigationItem for each Navigation.
         MDBottomNavigationItem:
             name: "screen4"
             text: "My Blood"
-            icon: "information"
+            icon: "book"
     
             # Add Contents here
             Screenfour:
