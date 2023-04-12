@@ -1,0 +1,11 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+
+
+{% block title %}{% if subtitle %}{{ subtitle }} | {% endif %}HealthPlus+| {{ site_title|default:_('Django site admin') }}{% endblock %} 
+{% block branding %}
+<h1 id="site-name" style="font-family: regular" ><a href="{% url 'admin:index' %}">HealthPlus+</a></h1>
+{% endblock %}
+
+{% block nav-global %}
+{% endblock %}

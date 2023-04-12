@@ -1,0 +1,156 @@
+MDScreen:
+    name:"register"
+    MDFloatLayout:
+        md_bg_color:1,1,1,1
+        Image:
+            source:"assets/main.png"
+            pos_hint:{"center_x":.50,"center_y":.90}
+            size_hint: .4,.4
+        MDLabel:
+            text: "Create a health plus+ account"
+            font_size: "20sp"
+            pos_hint:{"center_y": .80}
+            halign: "center"
+            color: rgba(34,34,34,255)
+    MDFloatLayout:
+        size_hint: .7, .07
+        pos_hint: {"center_x": .5,"center_y": .70}
+        TextInput:
+            id:email
+            hint_text: "Email"
+            size_hint_y: .75
+            pos_hint: {"center_x": .43 ,"center_y": .5}
+            background_color:1,1,1,0
+            foreground_color:rgba(0,0,59,255)
+            font_size:"14sp"
+            cursor_width:"2sp"
+            multiline:False
+            email:True
+        MDFloatLayout:
+            pos_hint: {"center_x": .45,"center_y":0}
+            size_hint_y: .03
+            md_bg_color: rgba(178,178,178,255)
+    MDFloatLayout:
+        size_hint: .7, .07
+        pos_hint: {"center_x": .5,"center_y": .60}
+        TextInput:
+            id:national_id
+            hint_text: "National ID"
+            size_hint_y: .75
+            pos_hint: {"center_x": .43 ,"center_y": .5}
+            background_color:1,1,1,0
+            foreground_color:rgba(0,0,59,255)
+            font_size:"14sp"
+            cursor_width:"2sp"
+            multiline:False
+            email:True
+        MDFloatLayout:
+            pos_hint: {"center_x": .45,"center_y":0}
+            size_hint_y: .03
+            md_bg_color: rgba(178,178,178,255)
+    MDFloatLayout:
+        size_hint: .7, .07
+        pos_hint: {"center_x": .5,"center_y": .50}
+        TextInput:
+            id:phonenumber
+            hint_text: "Phone Number"
+            size_hint_y: .75
+            pos_hint: {"center_x": .43 ,"center_y": .5}
+            background_color:1,1,1,0
+            foreground_color:rgba(0,0,59,255)
+            font_size:"14sp"
+            cursor_width:"2sp"
+            multiline:False
+            email:True
+        MDFloatLayout:
+            pos_hint: {"center_x": .45,"center_y":0}
+            size_hint_y: .03
+            md_bg_color: rgba(178,178,178,255)
+    MDFloatLayout:
+        size_hint: .7, .07
+        pos_hint: {"center_x": .5,"center_y": .40}
+        TextInput:
+            id:dob
+            hint_text: "Date of birth ex. YYYY-MM-DD"
+            size_hint_y: .75
+            pos_hint: {"center_x": .43 ,"center_y": .5}
+            background_color:1,1,1,0
+            foreground_color:rgba(0,0,59,255)
+            font_size:"14sp"
+            cursor_width:"2sp"
+            multiline:False
+        MDFloatLayout:
+            pos_hint: {"center_x": .45,"center_y":0}
+            size_hint_y: .03
+            md_bg_color: rgba(178,178,178,255)
+    MDFloatLayout:
+        size_hint: .7, .07
+        pos_hint: {"center_x": .5,"center_y": .30}
+        TextInput:
+            id:password
+            hint_text: "Password"
+            size_hint_y: .75
+            pos_hint: {"center_x": .43 ,"center_y": .5}
+            background_color:1,1,1,0
+            foreground_color:rgba(0,0,59,255)
+            font_size:"14sp"
+            cursor_width:"2sp"
+            multiline:False
+            password:True
+        MDFloatLayout:
+            pos_hint: {"center_x": .45,"center_y":0}
+            size_hint_y: .03
+            md_bg_color: rgba(178,178,178,255)
+    MDFloatLayout:
+        size_hint: .7, .07
+        pos_hint: {"center_x": .5,"center_y": .20}
+        TextInput:
+            id:passcode
+            hint_text: "Retype-Password"
+            size_hint_y: .75
+            pos_hint: {"center_x": .43 ,"center_y": .5}
+            background_color:1,1,1,0
+            foreground_color:rgba(0,0,59,255)
+            font_size:"14sp"
+            cursor_width:"2sp"
+            multiline:False
+            password:True
+        MDFloatLayout:
+            pos_hint: {"center_x": .45,"center_y":0}
+            size_hint_y: .03
+            md_bg_color: rgba(178,178,178,255)
+    Button:
+        text: "Sign-Up"
+        size_hint: .66,.065
+        pos_hint: {"center_x":.5,"center_y":.10}
+        background_color:0,0,0,0
+        on_release:
+            app.signup_process(email.text,national_id.text,phonenumber.text,dob.text,password.text,passcode.text,)
+        canvas.before:
+            Color:
+                rgb: rgba(225,76,76,255)
+            RoundedRectangle:
+                size: self.size
+                pos: self.pos
+                radius: [5]
+    MDTextButton:
+        text: "Already have an account"
+        pos_hint:{"center_x": .5,"center_y": .05}
+        color: rgba(225,76,76,255)
+        font_size:"12sp"
+        on_release:
+            root.manager.transition.direction = "left"
+            root.manager.current = "login"
+
+
+       
+
+
+
+
+
+
+             
+             
+
+   

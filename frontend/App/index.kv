@@ -1,0 +1,45 @@
+MDScreen:
+    name:"index"
+    MDFloatLayout:
+        md_bg_color:5,3,1,0
+        Image:
+            source:"assets/main.png"
+            pos_hint:{"center_x":.50,"center_y":.88}
+            size_hint: .5,.5
+        
+        MDLabel:
+            text: "Health Plus+ Blood Donor"
+            font_size: "17sp"
+            pos_hint:{"center_y": .37}
+            halign: "center"
+            color: rgba(34,34,34,255)
+        MDLabel:
+            text: "'Health Plus blood donotion platform'"
+            font_size: "11sp"
+            size_hint_x: .85
+            pos_hint:{"center_x":.5,"center_y": .3}
+            halign: "center"
+            color: rgba(127,127,127,255)
+        Button:
+            text: "Get started"
+            size_hint: .66,.065
+            pos_hint: {"center_x":.5,"center_y":.18}
+            background_color:0,0,0,0
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = "login"
+            canvas.before:
+                Color:
+                    rgb: rgba(225,76,76,255)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [5]
+
+
+
+
+
+
+             
+            

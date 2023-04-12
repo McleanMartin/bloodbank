@@ -1,0 +1,137 @@
+#:import MapView kivy_garden.mapview.MapView
+
+
+<Screentwo>
+
+<Card>
+    orientation: 'vertical'
+    radius:12
+    padding: ('12dp', 0, '12dp', '12dp')
+    # md_bg_color: get_color_from_hex("#ffab1925")
+
+    Image:
+        source:root.source
+    MDLabel:
+        text: root.text
+        adaptive_height:True
+        halign:"center"
+        font_size:"14sp"
+
+        
+<Screenone>
+    MDFloatLayout:
+        md_bg_color: get_color_from_hex("#ff1919e8")
+        size_hint_y: .45
+        pos_hint: {'top': 1}
+
+    MDLabel:
+        text: "Good Morning \n Martin"
+        bold:True
+        font_style:"H4"
+        pos_hint: {'center_y': 0.85}
+        x:"24dp" 
+
+    MDGridLayout:
+        rows:2
+        cols:2
+        spacing: '10dp'
+        padding: ('36dp',)
+        size_hint_y: None
+        height: root.height / 1.4
+
+
+        Card:
+            source:"assets/bag.jpg"
+            text:"Blood Donor Card"
+        Card:
+            source:"assets/bag.jpg"
+            text:"Blood Details"
+        Card:
+            source:"assets/bag.jpg"
+            text:"Locate Hospital"
+        Card:
+            source:"assets/bag.jpg"
+            text:"Assistance"
+           
+<Screenfour>
+    MDFloatLayout:
+        md_bg_color: get_color_from_hex("#ff1919e8")
+        size_hint_y: .45
+        pos_hint: {'top': 1}
+
+    MDLabel:
+        text: "My Blood"
+        bold:True
+        font_style:"H6"
+        pos_hint: {'center_y': 0.85}
+        x:"24dp" 
+
+    MDGridLayout:
+        rows:2
+        cols:2
+        spacing: '10dp'
+        padding: ('36dp',)
+        size_hint_y: None
+        height: root.height / 1.4
+
+
+        Card:
+            source:"assets/donate.jpg"
+            text:""
+        Card:
+            source:"assets/donate.jpg"
+            text:""
+        Card:
+            source:"assets/donate.jpg"
+            text:""
+        Card:
+            source:"assets/donate.jpg"
+            text:""
+            
+MDScreen:
+    name:"home"
+
+
+    MDBottomNavigation:
+    
+        # Add a NavigationItem for each Navigation.
+        MDBottomNavigationItem:
+            name: "screen1"
+            text: "Today"
+            icon: "calendar"
+    
+            # Add Contents here
+            Screenone:
+
+        # Add a NavigationItem for each Navigation.
+        MDBottomNavigationItem:
+            name: "screen2"
+            text: "Map"
+            icon: "map"
+    
+            # Add Contents here
+            Screentwo:
+                MapView:
+	                lat: 36
+	                lon: -115
+	                zoom: 5
+        
+        # Add a NavigationItem for each Navigation.
+        MDBottomNavigationItem:
+            name: "screen3"
+            text: "Alerts"
+            icon: "alert"
+    
+            # Add Contents here
+
+        
+        # Add a NavigationItem for each Navigation.
+        MDBottomNavigationItem:
+            name: "screen4"
+            text: "My Blood"
+            icon: "information"
+    
+            # Add Contents here
+            Screenfour:
+            
+        

@@ -1,0 +1,95 @@
+MDScreen:
+    name:"login"
+    MDFloatLayout:
+        md_bg_color:1,1,1,1
+        MDIconButton:
+            icon:"arrow-left" 
+            pos_hint: {"center_y":.95}
+            user_font_color:"30sp"
+            theme_text_color: "Custom"
+            text_color: rgba(26,24,58,255)
+            
+            on_release:
+                root.manager.transition.direction = "right"
+                root.manager.current = "index"
+        Image:
+            source:"assets/main.png"
+            pos_hint:{"center_x":.50,"center_y":.90}
+            size_hint: .4,.4
+        MDLabel:
+            text: "Welcome to health plus+"
+            font_size: "20sp"
+            pos_hint:{"center_y": .80}
+            halign: "center"
+            color: rgba(34,34,34,255)
+        MDFloatLayout:
+            size_hint: .7, .07
+            pos_hint: {"center_x": .5,"center_y": .63}
+            TextInput:
+                id:email
+                hint_text: "Email"
+                size_hint_y: .75
+                pos_hint: {"center_x": .43 ,"center_y": .5}
+                background_color:1,1,1,0
+                foreground_color:rgba(0,0,59,255)
+                font_size:"14sp"
+                cursor_width:"2sp"
+                multiline:False
+                email:True
+            MDFloatLayout:
+                pos_hint: {"center_x": .45,"center_y":0}
+                size_hint_y: .03
+                md_bg_color: rgba(178,178,178,255)
+        MDFloatLayout:
+            size_hint: .7, .07
+            pos_hint: {"center_x": .5,"center_y": .5}
+            TextInput:
+                id:password
+                icon:'key'
+                hint_text: "Password"
+                size_hint_y: .75
+                pos_hint: {"center_x": .43 ,"center_y": .5}
+                background_color:1,1,1,0 
+                foreground_color:rgba(0,0,59,255)
+                font_size:"14sp"
+                cursor_width:"2sp"
+                multiline:False
+                password:True
+            MDFloatLayout:
+                pos_hint: {"center_x": .45,"center_y":0}
+                size_hint_y: .03
+                md_bg_color: rgba(178,178,178,255)
+        Button:
+            text: "Sign-In"
+            size_hint: .66,.065
+            pos_hint: {"center_x":.5,"center_y":.34}
+            background_color:0,0,0,0
+            on_press:
+                app.login_process(email.text,password.text)
+            canvas.before:
+                Color:
+                    rgb: rgba(225,76,76,255)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [5]
+       
+        MDTextButton:
+            text: "Create a new account Now"
+            pos_hint:{"center_x": .5,"center_y": .28}
+            color: rgba(225,76,76,255)
+            font_size:"12sp"
+            on_release:
+                root.manager.transition.direction = "right"
+                root.manager.current = "register"
+
+
+       
+
+
+
+
+
+
+             
+             
