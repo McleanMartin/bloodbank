@@ -13,5 +13,6 @@ urlpatterns = [
     path('api/profile',Fetch_User_Profile.as_view(),name="profile"),
     path('api/alerts',Fetch_Alerts.as_view(),name="alerts"),
     
-]
+] 
+#martin was here
 
